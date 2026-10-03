@@ -1,0 +1,41 @@
+@material_graph
+material M_Materialize_Master:
+    input tex_base: Texture2D
+    input tex_norm: Texture2D
+    input tex_orm: Texture2D
+    input tex_emit: Texture2D
+    input tint: Vec3
+    input emit_color: Vec3
+    input roughness_scale: Float = 1.0
+    input metallic_scale: Float = 1.0
+    input ao_scale: Float = 1.0
+    input emit_scale: Float = 1.0
+
+    let uv = texture_coordinate(0)
+
+    let samp_base = sample(tex_base, uv)
+    let samp_norm = sample(tex_norm, uv)
+    let samp_orm  = sample(tex_orm, uv)
+    let samp_emit = sample(tex_emit, uv)
+
+    let base_rgb  = samp_base.rgb
+    let ao_raw    = samp_orm.r
+    let rough_raw = samp_orm.g
+    let metal_raw = samp_orm.b
+
+    let mul_base  = multiply(base_rgb, tint)
+    let mul_rough = multiply(rough_raw, roughness_scale)
+    let mul_metal = multiply(metal_raw, metallic_scale)
+    let mul_ao    = multiply(ao_raw, ao_scale)
+    let mul_emit  = multiply(samp_emit.rgb, emit_color)
+    let scaled_emit = multiply(mul_emit, emit_scale)
+
+    let clamp_rough = clamp(mul_rough, 0.0, 1.0)
+    let clamp_metal = clamp(mul_metal, 0.0, 1.0)
+
+    output base_color        = mul_base
+    output normal            = samp_norm
+    output roughness         = clamp_rough
+    output metallic          = clamp_metal
+    output ambient_occlusion = mul_ao
+    output emissive          = scaled_emit

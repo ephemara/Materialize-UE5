@@ -1,0 +1,21 @@
+# Unreal Engine ignore
+Binaries/
+Intermediate/
+DerivedDataCache/
+Saved/
+
+# Editor / IDE
+.cache/
+.vs/
+.idea/
+.vscode/
+
+# Build and temp files
+*.sln
+*.suo
+*.user
+*.opendb
+*.db
+
+# Release packages
+*.zip

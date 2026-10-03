@@ -1,0 +1,25 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0.0",
+	"FriendlyName": "Materialize",
+	"Description": "Substance Sampler for UE5. Generate complete PBR materials from a single image with 30+ material presets.",
+	"Category": "K-Studio",
+	"CreatedBy": "K-Studio",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"EnabledByDefault": true,
+	"Modules": [
+		{
+			"Name": "Materialize",
+			"Type": "Editor",
+			"LoadingPhase": "PostConfigInit"
+		}
+	]
+}
