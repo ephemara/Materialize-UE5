@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="Resources/Icon256.png" alt="Materialize Icon" width="128" height="128" />
+</p>
+
 <h1 align="center">Materialize</h1>
 
 <p align="center">
