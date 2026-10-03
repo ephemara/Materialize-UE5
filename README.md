@@ -21,7 +21,8 @@
 
 Generate production-ready PBR texture sets from a single photo, author procedural materials with an interactive node graph, batch process entire directories of textures, and bake everything into optimized game assets—with zero external tools, no Python dependencies, and no third-party subscriptions.
 
-*Note: This repository has a clean commit history because Materialize was previously developed inside a private monorepo. It has now been separated and made public on GitHub.*
+> [!NOTE]
+> *This repository has a clean commit history because Materialize was previously developed inside a private monorepo. It has now been separated and made public on GitHub.*
 
 ---
 
